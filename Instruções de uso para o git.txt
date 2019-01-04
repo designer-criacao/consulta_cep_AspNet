@@ -1,0 +1,54 @@
+Instruções de uso para o git:
+
+Iniciar: git init
+
+Logar: git config --global user.name "Seu Nome" 
+     • git config --global user.email "Seu Email"
+Ver status: git status;
+Preparar para Add no git: git add .;
+Adicionando no git: git commit -m "msg" ;
+Para ver os commit's: git log ou git log --oneline ;
+
+Descartar todas modificações, voltando ao estado do commit atual:
+ git clean -df 
+ git checkout -- .
+
+*****************************************************************************
+E se eu quiser desfazer o último commit?
+1) Remover o último commit mantendo as alterações nos arquivos: 
+ git reset --soft HEAD~1
+2) Remover o último commit INCLUSIVE as alterações nos arquivos (PERIGO!): 
+ git reset --hard HEAD~1
+
+*****************************************************************************
+E se eu quiser somente dar uma olhada em uma versão anterior? 
+1) Navegar entre commits, alterando os arquivos temporariamente: 
+ git checkout <código do commit>
+2) Voltar para o último commit: 
+ git checkout <nome do branch> (neste caso o branch é o master)
+
+*****************************************************************************
+Associando um repositório remoto ao seu repositório local
+1) Associar nosso repositório local ao repositório remoto, dando o apelido de "origin" a ele:
+ git remote add origin <URI do repositório remoto>
+
+*****************************************************************************
+Como enviar o repositório local para o Github
+ git push -u origin master
+
+Nota: se você usou a opção -u, nas próximas vezes que for subir o branchmaster, basta fazer: 
+ git push
+
+*****************************************************************************
+Copiando um repositório remoto para seu computador Copiar o repositório, inclusive o histórico de commits: 
+ git clone <URI do repositório remoto>
+
+ATENÇÃO: simplesmente copiar os arquivos NÃO traz o histórico de commits!
+
+*****************************************************************************
+Como atualizar seu repositório local
+IMPORTANTE: o Gitsó deixa você continuar um trabalho e depois subi-lo para o repositório remoto, se você mantiver a sequência coerente de commits
+Comando para atualizar seu repositório local: 
+ git pull origin master
+
+
